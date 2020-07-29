@@ -3,13 +3,15 @@ import './signin.scss';
 import FormInput from './../Form-Input/formInput';
 import Button from '../button/button';
 
+import { signInWithGoogle } from './../../firebase/firebase';
+
 export default class Signin extends Component {
     constructor() {
         super();
 
         this.state = {
-            email: 'user@example.com',
-            password: 'password'
+            email: '',
+            password: ''
         }
     }
 
@@ -46,9 +48,18 @@ export default class Signin extends Component {
                     label="Password"
                     required />
 
-                    <Button type="submit">
-                        Sign In
-                    </Button>
+                    <div className="buttons">
+                        <Button type="submit">
+                            Sign In
+                        </Button>
+
+                        <Button 
+                        onClick={signInWithGoogle}
+                        isGoogleSignIn >
+                            {''}
+                            Sign In with Google{''}
+                        </Button>
+                    </div>
                 </form>
             </div>
         )
