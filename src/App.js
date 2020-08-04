@@ -10,7 +10,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import Header from './components/header/header.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
-import Hats from './pages/hats/hats';
+import hats from './pages/hats/hats';
 import Jackets from './pages/jackets/jackets';
 import Sneakers from './pages/sneakers/sneakers';
 import Womens from './pages/women/women';
@@ -49,7 +49,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
-          <Route path='/hats' component={Hats} />
+          <Route path='/hats' component={hats} />
           <Route path='/jackets' component={Jackets} />
           <Route path='/sneakers' component={Sneakers} />
           <Route path='/womens' component={Womens} />
