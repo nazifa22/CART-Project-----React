@@ -5,7 +5,6 @@ import './hats.scss'
 const Hats = ({id, ...otherItemProps}) => {
     return (
         <div className="hats-page">
-
             {
                 SHOP_DATA
                 .filter((items) => items.routeName === 'hats')
