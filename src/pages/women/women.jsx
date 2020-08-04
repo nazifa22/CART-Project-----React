@@ -1,42 +1,35 @@
 import React from 'react';
 import SHOP_DATA from './../shop/shop.data';
-import './women.scss'
+import './women.scss';
+import { connect } from 'react-redux';
+
+import { addItem } from '../../redux/cart/cart.actions';
+import CollectionItem from '../../components/collection-item/collection-item.component';
 
 const Womens = ({id, ...otherItemProps}) => {
-    return (
-        <div className="sneakewomensrs-page">
+    const filtered = SHOP_DATA.filter((items) => items.routeName === 'womens');
 
+    return (
+        <div className="womens-page-item">
             {
-                SHOP_DATA
-                .filter((items) => items.routeName === 'womens')
-                .map((items) => ( 
-                    <div className="womens-page-item">
-                        
-                        {
-                            items.items.map((singleItem) => (
-                                <div>
-                                
-                                    <div className="item-image" style={{
-                                        backgroundImage: `url(${singleItem.imageUrl})`
-                                    }}>
-                                    </div>
-                                    <div className="womens-page-footer">
-                                        <span class="name">
-                                            { singleItem.name }
-                                        </span>
-                                        <span class="price">
-                                            ${ singleItem.price }
-                                        </span>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                        
-                    </div>
+
+                filtered.map(items => (
+                    items.items
+                    .map((item) => (
+                        <CollectionItem key={item.id} item={item} width={true} />
+                    ))
                 ))
+
             }
         </div>
     )
 }
 
-export default Womens;
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+});
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Womens);

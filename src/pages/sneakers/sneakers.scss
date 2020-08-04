@@ -1,6 +1,6 @@
 .sneakers-page-item {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-column-gap: 20px;
     grid-row-gap: 50px;
 
@@ -10,6 +10,7 @@
         justify-content: space-between;
         padding: 10px;
         background-color: #f5f5f5;
+        position: relative;
 
         span {
             display: flex;

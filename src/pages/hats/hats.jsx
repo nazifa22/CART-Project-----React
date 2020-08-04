@@ -4,7 +4,6 @@ import './hats.scss';
 import { connect } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
-import CustomButton from '../../components/custom-button/custom-button.component';
 import CollectionItem from '../../components/collection-item/collection-item.component';
 import '../../components/collection-item/collection-item.styles.scss';
 
