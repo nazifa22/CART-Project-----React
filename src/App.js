@@ -15,6 +15,7 @@ import Jackets from './pages/jackets/jackets';
 import Sneakers from './pages/sneakers/sneakers';
 import Womens from './pages/women/women';
 import Mens from './pages/men/men';
+import CheckoutPage from './pages/checkout/checkout-component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -49,6 +50,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
+          <Route path='/checkout' component={CheckoutPage} />
           <Route path='/hats' component={hats} />
           <Route path='/jackets' component={Jackets} />
           <Route path='/sneakers' component={Sneakers} />

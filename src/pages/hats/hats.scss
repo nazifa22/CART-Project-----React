@@ -25,12 +25,13 @@
     background-size: cover;
     background-position: center;
   }
-}
 
+  
+  .custom-button {
+    position: absolute;
+    bottom: 44px;
+    right: 0;
+    transition: all 0.7s ease-in-out;
+  }
 
-.custom-button {
-  position: absolute;
-  bottom: 44px;
-  right: 0;
-  transition: all 0.7s ease-in-out;
 }
